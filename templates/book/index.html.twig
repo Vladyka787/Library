@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Book index{% endblock %}
+
+{% block body %}
+    <h1>Book index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>BookName</th>
+                <th>BookCover</th>
+                <th>BookFile</th>
+                <th>BookAuthor</th>
+                <th>BookDateRead</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for book in books %}
+            <tr>
+                <td>{{ book.id }}</td>
+                <td>{{ book.BookName }}</td>
+                <td>{{ book.BookCover }}</td>
+                <td>{{ book.BookFile }}</td>
+                <td>{{ book.BookAuthor }}</td>
+                <td>{{ book.BookDateRead ? book.BookDateRead|date('Y-m-d H:i:s') : '' }}</td>
+                <td>
+                    <a href="{{ path('app_book_show', {'id': book.id}) }}">show</a>
+                    <a href="{{ path('app_book_edit', {'id': book.id}) }}">edit</a>
+                </td>
+            </tr>
+            <p>
+{#                <a href='book/file/test.pdf' target="_blank">{{ book.BookName }}</a>#}
+            </p>
+
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <img src={{ asset('../../assets/book/cover/test.jpg') }} width="200" height="255">
+
+    <a href="{{ path('app_book_new') }}">Create new</a>
+{% endblock %}

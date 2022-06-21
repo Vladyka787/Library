@@ -107,5 +107,10 @@ class Book
         return $this;
     }
 
+    public function updateBookDateRead()
+    {
+        $this->BookDateRead = new \DateTime("now");
 
+        return $this;
+    }
 }

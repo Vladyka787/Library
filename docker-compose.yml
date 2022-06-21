@@ -9,6 +9,7 @@ services:
       - ${PWD}:/app
       - ./docker/hosts/app.conf:/etc/nginx/conf.d/default.conf
       - ./docker/hosts/symfony:/etc/nginx/symfony
+      - ./docker/hosts/my_custom_proxy_settings.conf:/etc/nginx/conf.d/my_custom_proxy_settings.conf
     ports:
       - "${NGINX_PORT}:80"
     links:

@@ -32,7 +32,7 @@ class BookType extends AbstractType
                             'image/png',
                             'image/jpeg',
                         ],
-                        'mimeTypesMessage' => 'Please upload a valid JPG OR PNG file',
+                        'mimeTypesMessage' => 'Загрузите корректный PNG/JPG файл',
                     ])
                 ]
             ])
@@ -47,7 +47,7 @@ class BookType extends AbstractType
                             'application/pdf',
                             'application/x-pdf',
                         ],
-                        'mimeTypesMessage' => 'Please upload a valid PDF document',
+                        'mimeTypesMessage' => 'Загрузите корректный PDF документ',
                     ])
                 ]
             ]);

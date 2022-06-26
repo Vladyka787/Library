@@ -15,6 +15,7 @@
                     <ul class="navbar-nav">
                         {% if is_granted('IS_ANONYMOUS') %}
                             <li class="nav-item"><a class="nav-link" href="{{ path('login') }}">Войти</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ path('app_register') }}">Регистрация</a></li>
                         {% endif %}
                         {% if is_granted('IS_AUTHENTICATED_FULLY') %}
                             <li class="nav-item"><a class="nav-link" href="{{ path('app_book_new') }}">Добавить
